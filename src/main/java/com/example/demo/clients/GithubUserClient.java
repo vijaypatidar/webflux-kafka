@@ -7,17 +7,12 @@ import reactor.core.publisher.Mono;
 @Component
 public class GithubUserClient extends AbstractClient{
 
-
-    private String baseUrl = "https://api.github.com/";
-
     public Mono<GithubUser> getGithubUser( String username){
         return getMono("users/"+username,GithubUser.class);
     }
 
-
-
     @Override
     protected String baseUrl() {
-        return baseUrl;
+        return "https://api.github.com/";
     }
 }

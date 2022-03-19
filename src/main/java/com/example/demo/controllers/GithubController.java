@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controllers;
 
 import com.example.demo.clients.GithubUserClient;
 import com.example.demo.kafka.producer.KafkaTopicConfig;
@@ -30,4 +30,5 @@ public class GithubController {
         kafkaTemplate.send(KafkaTopicConfig.USER_INFO,username);
         return githubUserClient.getGithubUser(username);
     }
+
 }
