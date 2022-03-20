@@ -2,12 +2,14 @@ package com.example.demo.controllers
 
 import com.example.demo.models.User
 import com.example.demo.services.UserService
+import io.micrometer.core.annotation.Timed
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ServerWebExchange
 import reactor.core.publisher.Mono
 
 @RestController
 @RequestMapping("/users")
+@Timed("UserController")
 class UserController(private val userServices: UserService) : BaseController() {
 
     @PostMapping("")

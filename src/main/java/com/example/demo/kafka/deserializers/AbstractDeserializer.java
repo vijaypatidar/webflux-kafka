@@ -8,7 +8,7 @@ import org.apache.kafka.common.serialization.Deserializer;
 import java.util.Map;
 
 public abstract class AbstractDeserializer<T> implements Deserializer<T> {
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {
