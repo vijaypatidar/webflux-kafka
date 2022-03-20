@@ -14,8 +14,6 @@ class UserController(private val userServices: UserService) : BaseController() {
 
     @PostMapping("")
     fun createUser(@RequestBody user: User, exchange:ServerWebExchange): Mono<User> {
-        val authToken = getAuthToken(exchange)
-
         return userServices.createUser(user);
     }
 
